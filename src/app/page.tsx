@@ -1,103 +1,196 @@
-import Image from "next/image";
+'use client';
+import digitalmarketing from './assets/digitalmarketing.jpg';
+import traditional from './assets/traditionalmarketing.jpg';
+import website from './assets/webdesigning.jpg';
+import app from './assets/appdevelopment.jpg';
+import fullstack from './assets/fullstack.jpg';
+import socialmedia from './assets/socialmedia.jpg';
+import custom from './assets/customesolution.jpg';
+import bootstrap from './assets/Bootstrapping.jpg';
 
-export default function Home() {
+import InfoSection, { InfoSectionProps } from './components/Infosection';
+
+const data: InfoSectionProps[] = [
+  {
+    id: 1,
+    title: 'Digital Marketing',
+    highlight: 'Marketing',
+    description: 'Promoting your brand online to reach more people and grow your business.',
+    imageUrl: digitalmarketing,
+    faqs: [
+      {
+        question: 'Why does digital marketing matter',
+        answer: 'It connects your brand with the right audience, builds awareness, and drives growth through targeted online strategies.'
+      },
+      {
+        question: 'What services do you provide',
+        answer: 'SEO, Google & Facebook Ads, Content Strategy, Social Media Management, and more.'
+      },
+      {
+        question: 'How do ads help my business',
+        answer: 'Ads increase brand visibility, drive targeted traffic, and result in better conversions.'
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Traditional",
+    highlight: "Marketing",
+    description: "Promoting your brand through offline methods like print, events, and podcasts to reach wider audiences.",
+    imageUrl: traditional,
+    faqs: [
+      {
+        question: "Why does traditional marketing matter?",
+        answer: "It builds brand trust, engages local audiences, and supports digital efforts through offline visibility."
+      },
+      {
+        question: "What services do you offer?",
+        answer: "We offer banner ads, print media, event marketing, podcast production, and offline brand activations."
+      },
+      {
+        question: "How do offline campaigns help?",
+        answer: "They create tangible brand experiences, reinforce local presence, and complement online visibility."
+      }
+    ]
+  },
+{
+    id: 3,
+    title: "Website",
+    highlight: "Development",
+    description: "Building fast, responsive, and user-friendly websites that help your brand grow online.",
+    imageUrl: website,
+    faqs: [
+      {
+        question: "Why is a website important?",
+        answer: "It’s your digital storefront—helping build trust, share your message, and drive sales or leads."
+      },
+      {
+        question: "What services do you offer?",
+        answer: "We build custom websites, landing pages, CMS platforms, and redesign existing sites."
+      },
+      {
+        question: "Do you handle e-commerce too?",
+        answer: "Yes, we develop scalable and secure e-commerce websites tailored to your needs."
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "App",
+    highlight: "Development",
+    description: "Creating mobile apps to help your brand engage users anywhere, anytime.",
+    imageUrl: app,
+    faqs: [
+      {
+        question: "Why are apps important?",
+        answer: "They offer personalized, mobile-first experiences that boost user engagement and loyalty."
+      },
+      {
+        question: "What services do you offer?",
+        answer: "We design and develop native and cross-platform apps with complete backend support."
+      },
+      {
+        question: "Do you build for both iOS and Android?",
+        answer: "Yes, we develop apps for both iOS and Android using native and hybrid technologies."
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "Full-Stack",
+    highlight: "Software Solutions",
+    description: "Custom software built from the ground up to fit your business processes and scale with your growth.",
+    imageUrl: fullstack,
+    faqs: [
+      {
+        question: "Why choose custom software?",
+        answer: "It’s scalable, efficient, and tailored to your exact needs—unlike generic tools."
+      },
+      {
+        question: "What services do you offer?",
+        answer: "We provide full-stack development for SaaS platforms, enterprise tools, and business automation systems."
+      },
+      {
+        question: "Can you build SaaS platforms?",
+        answer: "Absolutely, we specialize in building robust SaaS platforms from concept to launch."
+      }
+    ]
+  },
+  {
+    id: 6,
+    title: "Social Media",
+    highlight: "Management",
+    description: "Managing your brand’s presence on social platforms to grow engagement, trust, and loyalty.",
+    imageUrl: socialmedia,
+    faqs: [
+      {
+        question: "Why is social media important?",
+        answer: "It’s where your audience lives. A strong social presence builds trust and keeps your brand top-of-mind."
+      },
+      {
+        question: "What services do you offer?",
+        answer: "We handle content creation, posting, scheduling, reporting, and platform strategy."
+      },
+      {
+        question: "Do you handle posting and replies?",
+        answer: "Yes, we manage posting, monitor engagement, and respond to comments and messages."
+      }
+    ]
+  },
+  {
+    id: 7,
+    title: "Custom",
+    highlight: "Solutions",
+    description: "Tailored strategies and builds designed specifically for your unique business needs.",
+    imageUrl: custom,
+    faqs: [
+      {
+        question: "Why choose a custom solution?",
+        answer: "Your business is unique—custom solutions align perfectly with your goals, not generic templates."
+      },
+      {
+        question: "What services do you offer?",
+        answer: "We provide tailored development, strategy consulting, integrations, and full-stack builds."
+      },
+      {
+        question: "Is my idea safe with you?",
+        answer: "Yes, we maintain complete confidentiality and can sign NDAs upon request."
+      }
+    ]
+  },
+  {
+    id: 8,
+    title: "Brand",
+    highlight: "Bootstrapping",
+    description: "Helping you launch your brand from the ground up — with everything built for success.",
+    imageUrl: bootstrap,
+    faqs: [
+      {
+        question: "Why is brand bootstrapping important?",
+        answer: "It takes the stress out of starting a brand—so you focus on the idea while we handle the setup and launch."
+      },
+      {
+        question: "What do you offer for new brands?",
+        answer: "We help with naming, brand identity, website, social setup, and launch strategy."
+      },
+      {
+        question: "Do you help after launch too?",
+        answer: "Yes, we offer post-launch support including marketing, optimization, and scaling assistance."
+      }
+    ]
+  }
+];
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="relative bg-black text-white px-6 md:px-20 py-16">
+      <div className="absolute left-[50%] transform -translate-x-1/2 top-0 bottom-0 min-h-screen w-[1px] bg-white z-0" />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <div className="flex flex-col space-y-8">
+        {data.map((section) => (
+          <InfoSection key={section.id} {...section} />
+        ))}
+      </div>
     </div>
   );
 }
