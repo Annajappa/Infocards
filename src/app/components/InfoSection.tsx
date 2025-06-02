@@ -33,10 +33,11 @@ export default function InfoSection({
 
   return (
     <div
-      className={`relative flex flex-col ${
-        id % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
-      } items-start md:items-center justify-between gap-12 py-10 px-6 md:px-20 text-white`}
-    >
+  className={`relative flex flex-col ${
+    id % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
+  } items-start md:items-center justify-between gap-12 py-10 px-6 md:px-20 text-white w-full max-w-7xl mx-auto`}
+>
+
       {/* Left Image */}
       <div className="md:w-1/2 flex justify-center">
         <Image
@@ -50,10 +51,10 @@ export default function InfoSection({
 
       {/* Middle ID Circle */}
       <div className="relative hidden md:flex w-[80px] justify-center items-center z-10">
-        <div className="w-13 h-13 bg-yellow-500 text-white rounded-full flex items-center justify-center text-[30px] shadow-md">
-          {id}
-        </div>
-      </div>
+  <div className="w-13 h-13 bg-yellow-500 text-white rounded-full flex items-center justify-center text-[30px] shadow-[0_0_40px_10px_rgba(234,186,49,0.3)]">
+    {id}
+  </div>
+</div>
 
       {/* Right Content */}
       <div className="md:w-1/2 w-full space-y-4">

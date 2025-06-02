@@ -1,4 +1,5 @@
 'use client';
+
 import digitalmarketing from './assets/digitalmarketing.jpg';
 import traditional from './assets/traditionalmarketing.jpg';
 import website from './assets/webdesigning.jpg';
